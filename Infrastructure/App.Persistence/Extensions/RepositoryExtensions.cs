@@ -26,6 +26,14 @@ public static class RepositoryExtensions
 
             options.AddInterceptors(new AuditDbContextInterceptor());
         });
+
+        // Veritabanı migrationlarını otomatik olarak uygulama
+        var serviceProvider = services.BuildServiceProvider();
+        using (var scope = serviceProvider.CreateScope())
+        {
+            var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            dbContext.Database.Migrate();
+        }
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
