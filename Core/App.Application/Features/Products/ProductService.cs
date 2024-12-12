@@ -1,4 +1,5 @@
-﻿using App.Application.Contracts.Persistence;
+﻿using App.Application.Contracts.Caching;
+using App.Application.Contracts.Persistence;
 using App.Application.Features.Products.Create;
 using App.Application.Features.Products.Dto;
 using App.Application.Features.Products.Update;
@@ -14,8 +15,9 @@ public class ProductService(
         IProductRepository productRepository,
         IUnitOfWork unitOfWork,
         IValidator<CreateProductRequest> createProdcutRequestValidator,
-        IMapper mapper) : IProductService
+        IMapper mapper, ICacheService cacheService) : IProductService
 {
+    private const string ProductListCacheKey = "ProductListCacheKey";
     public async Task<ServiceResult<List<ProductDto>>> GetTopPriceProductsAsync(int count)
     {
         var products = await productRepository.GetTopPriceProductsAsync(count);
@@ -36,6 +38,11 @@ public class ProductService(
         // 2. from db
         // 3. caching data
 
+        var productListAsCached = await cacheService.GetAsync<List<ProductDto>>(ProductListCacheKey);
+
+        if (productListAsCached is not null) return ServiceResult<List<ProductDto>>.Success(productListAsCached);
+
+
         var products = await productRepository.GetAllAsync();
 
 
@@ -48,6 +55,8 @@ public class ProductService(
 
         var productsAsDto = mapper.Map<List<ProductDto>>(products);
 
+
+        await cacheService.AddAsync(ProductListCacheKey, productsAsDto, TimeSpan.FromMinutes(1));
 
         return ServiceResult<List<ProductDto>>.Success(productsAsDto);
     }

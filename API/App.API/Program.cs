@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllersWithFiltersExt().AddSwaggerGenExt().AddExceptionHandlerExt();
+builder.Services.AddControllersWithFiltersExt().AddSwaggerGenExt().AddExceptionHandlerExt().AddCachingExt();
 
 builder.Services.AddRepositories(builder.Configuration).AddServices(builder.Configuration);
 
