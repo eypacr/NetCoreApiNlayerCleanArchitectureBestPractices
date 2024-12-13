@@ -39,7 +39,7 @@ namespace App.Persistence.Migrations
                     Stock = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Updated = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Updated = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -57,9 +57,9 @@ namespace App.Persistence.Migrations
                 columns: new[] { "Id", "Created", "Name", "Updated" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9938), "Elektronik", new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9951) },
-                    { 2, new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9957), "Aksesuarlar", new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9958) },
-                    { 3, new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9960), "Ses", new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9961) }
+                    { 1, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(8172), "Elektronik", null },
+                    { 2, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(8184), "Aksesuarlar", null },
+                    { 3, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(8186), "Ses", null }
                 });
 
             migrationBuilder.InsertData(
@@ -67,11 +67,11 @@ namespace App.Persistence.Migrations
                 columns: new[] { "Id", "CategoryId", "Created", "Name", "Price", "Stock", "Updated" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3325), "Dizüstü Bilgisayar", 10000.00m, 50, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3327) },
-                    { 2, 2, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3333), "Akıllı Telefon", 7000.00m, 100, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3334) },
-                    { 3, 3, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3337), "Kulaklık", 1500.00m, 200, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3338) },
-                    { 4, 2, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3342), "Akıllı Saat", 3000.00m, 80, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3343) },
-                    { 5, 1, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3346), "Tablet", 5000.00m, 120, new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3347) }
+                    { 1, 1, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9656), "Dizüstü Bilgisayar", 10000.00m, 50, null },
+                    { 2, 2, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9659), "Akıllı Telefon", 7000.00m, 100, null },
+                    { 3, 3, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9660), "Kulaklık", 1500.00m, 200, null },
+                    { 4, 2, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9662), "Akıllı Saat", 3000.00m, 80, null },
+                    { 5, 1, new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9664), "Tablet", 5000.00m, 120, null }
                 });
 
             migrationBuilder.CreateIndex(

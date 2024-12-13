@@ -49,23 +49,20 @@ namespace App.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9938),
-                            Name = "Elektronik",
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9951)
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(8172),
+                            Name = "Elektronik"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9957),
-                            Name = "Aksesuarlar",
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9958)
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(8184),
+                            Name = "Aksesuarlar"
                         },
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9960),
-                            Name = "Ses",
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 454, DateTimeKind.Local).AddTicks(9961)
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(8186),
+                            Name = "Ses"
                         });
                 });
 
@@ -95,7 +92,6 @@ namespace App.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Updated")
-                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -109,51 +105,46 @@ namespace App.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3325),
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9656),
                             Name = "Dizüstü Bilgisayar",
                             Price = 10000.00m,
-                            Stock = 50,
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3327)
+                            Stock = 50
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 2,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3333),
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9659),
                             Name = "Akıllı Telefon",
                             Price = 7000.00m,
-                            Stock = 100,
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3334)
+                            Stock = 100
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 3,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3337),
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9660),
                             Name = "Kulaklık",
                             Price = 1500.00m,
-                            Stock = 200,
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3338)
+                            Stock = 200
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 2,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3342),
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9662),
                             Name = "Akıllı Saat",
                             Price = 3000.00m,
-                            Stock = 80,
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3343)
+                            Stock = 80
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 1,
-                            Created = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3346),
+                            Created = new DateTime(2024, 12, 13, 11, 35, 39, 511, DateTimeKind.Local).AddTicks(9664),
                             Name = "Tablet",
                             Price = 5000.00m,
-                            Stock = 120,
-                            Updated = new DateTime(2024, 12, 11, 12, 20, 29, 455, DateTimeKind.Local).AddTicks(3347)
+                            Stock = 120
                         });
                 });
 

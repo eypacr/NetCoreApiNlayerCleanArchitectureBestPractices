@@ -13,9 +13,9 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         // Seed Data
         builder.HasData(
-            new Category { Id = 1, Name = "Elektronik", Created = DateTime.Now, Updated = DateTime.Now },
-            new Category { Id = 2, Name = "Aksesuarlar", Created = DateTime.Now, Updated = DateTime.Now },
-            new Category { Id = 3, Name = "Ses", Created = DateTime.Now, Updated = DateTime.Now }
+            new Category { Id = 1, Name = "Elektronik", Created = DateTime.Now },
+            new Category { Id = 2, Name = "Aksesuarlar", Created = DateTime.Now },
+            new Category { Id = 3, Name = "Ses", Created = DateTime.Now }
         );
     }
 }
